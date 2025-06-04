@@ -1,6 +1,4 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Getting Started with Posts Project
 
 ## Available Scripts
 
@@ -14,11 +12,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
@@ -29,42 +22,81 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Project Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The project follows a modular and organized structure:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+src/
+├── app/              # Application configuration
+│   └── store.js     # Redux store setup and configuration
+│
+├── components/       # Reusable React components
+│   ├── PostForm.js  # Form component for creating and editing posts
+│   ├── PostTable.js # Table component for displaying posts
+│   ├── Pagination.js # Pagination component for post listing
+│   ├── PostList.js  # List component for displaying posts
+│   ├── PostFilter.js # Filter component for posts
+│   └── SearchForm.js # Search component for filtering posts
+│
+├── features/         # Feature modules
+│   └── postsSlice.js # Redux slice for posts state management
+│
+├── App.js           # Main application component
+├── App.css          # Main application styles
+├── index.js         # Application entry point
+├── index.css        # Global styles
+└── logo.svg         # Application logo
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Key Components
 
-## Learn More
+1. **App.js**
+   - Main application component
+   - Contains the main layout and routing
+   - Manages the main application state
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. **Store Configuration (app/store.js)**
+   - Redux store setup
+   - Middleware configuration
+   - Root reducer configuration
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. **Posts Feature (features/posts/)**
+   - Centralized state management for posts
+   - Async operations (fetch, create, delete)
+   - State persistence and error handling
 
-### Code Splitting
+4. **UI Components (components/)**
+   - **PostForm**: Form for creating and editing posts
+   - **PostTable**: Table view for displaying posts
+   - **PostList**: List component for displaying posts
+   - **Pagination**: Component for paginating posts
+   - **PostFilter**: Filter component for posts
+   - **SearchForm**: Search component for filtering posts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This structure promotes code organization, maintainability, and separation of concerns, making it easier to scale and maintain the application.
 
-### Analyzing the Bundle Size
+## Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- React 18.2.0
+- Redux Toolkit 2.2.2
+- React Redux 9.1.3
+- axios 1.6.7
 
-### Making a Progressive Web App
+## Development Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Install dependencies:
+```bash
+npm install
+```
 
-### Advanced Configuration
+2. Start the development server:
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Deployment
+The page will automatically reload when you make changes to the code.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
