@@ -27,7 +27,6 @@ const Post = db.define('Post', {
   }
 });
 
-// Sync the model with the database
 Post.sync()
   .then(() => console.log('Post model synced'))
   .catch(err => console.error('Error syncing Post model:', err));

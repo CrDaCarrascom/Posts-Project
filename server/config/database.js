@@ -10,9 +10,14 @@ const sequelize = new Sequelize({
   logging: false
 });
 
-module.exports = { db: sequelize };
+async function initializeDatabase() {
+  try {
+    await sequelize.authenticate();
+    console.log('Database connected');
+  } catch (err) {
+    console.error('Database connection error:', err);
+    throw err;
+  }
+}
 
-// Test connection
-sequelize.authenticate()
-  .then(() => console.log('Database connected'))
-  .catch(err => console.error('Database connection error:', err));
+module.exports = { db: sequelize, initializeDatabase };

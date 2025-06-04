@@ -18,12 +18,24 @@ The server follows a modular and organized structure:
 
 ```
 .
-├── config/          # Configuration files
-│   └── database.js  # PostgreSQL database configuration
-├── models/         # Sequelize models
-│   └── Post.js     # Post model definition
-├── server.js       # Main server file
-└── package.json    # Project dependencies and scripts
+├── config/                  # Configuration files
+│   └── database.js          # PostgreSQL database configuration and initialization
+│
+├── models/                 # Sequelize models
+│   └── Post.js              # Post model definition
+│
+├── routes/                 # Express route definitions
+│   └── postRoutes.js        # Routes for post-related endpoints
+│
+├── services/               # Business logic and data access
+│   └── postService.js       # Post-related services
+│
+├── rules/                  # Business rules and validation
+│   └── postRules.js         # Validation logic for posts
+│
+├── server.js               # Main server file (Express setup and route mounting)
+│
+└── package.json            # Project dependencies and scripts
 ```
 
 ### Key Components
